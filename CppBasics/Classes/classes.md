@@ -1,7 +1,7 @@
 # Classes in C++
 
 ### What is the primary difference between a struct and a class?
-Structs: Members of a struct are **public by default**
+Structs: Members of a struct are **public by default** \
 Classes: Members of a class are **private by default**
 
 ### When to use struct vs class
