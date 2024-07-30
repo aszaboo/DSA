@@ -6,6 +6,7 @@ Notes:
 Now the start and end of the list are represented by nullptrs.
 
 ## Doubly Linked List Node
+
 ```cpp
 class DoublyNode {
     int data;
@@ -23,9 +24,11 @@ class DoublyNode {
 ```
 
 ### Singly vs. Doubly
+
 If a size parameter is implemented for the LinkedList class the delete and insert time for a linked list can be cut in half if a size parameter included in the list class as the iteration through the list can start from the closer size to the insert index. This said the space per node is increased as now two pointers must be stored in each node. \
 
 ### Time Complexity of Operations
+
 |        | Singly       | Doubly       |
 | ------ |------------- | ------------ |
 | Search | O(n)         | O(n)         |

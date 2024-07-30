@@ -1,17 +1,21 @@
 ### Static vs. Dynamic Memory Allocation in C++
 
 #### Static Memory Allocation (Automatic)
+
 - **Definition:** Memory allocated at compile time on the stack. The size and lifetime are fixed and determined at compile time.
 - **Characteristics:** Fast allocation/deallocation, limited flexibility, automatic memory management.
 - **Example:**
+
   ```cpp
   int arr[100]; // Fixed-size array, statically allocated
   ```
 
 #### Dynamic Memory Allocation (Manual)
+
 - **Definition:** Memory allocated at runtime on the heap using operators like `new` and `new[]`, which must be manually managed.
 - **Characteristics:** Flexible size, manual memory management required, slower allocation/deallocation due to heap management.
 - **Example:**
+
   ```cpp
   int* ptr = new int;       // Allocates a single int
   int* arr = new int[100];  // Allocates an array of 100 ints
@@ -22,6 +26,7 @@
 1. **Pointer Declaration:**
    - **Definition:** Pointers store the address of variables. Declared with an asterisk (`*`).
    - **Example:**
+
      ```cpp
      int* p; // Pointer to an int
      ```
@@ -29,6 +34,7 @@
 2. **Address-of Operator (`&`):**
    - **Definition:** Retrieves the memory address of a variable.
    - **Example:**
+
      ```cpp
      int value = 42;
      int* p = &value; // p stores the address of value
@@ -37,6 +43,7 @@
 3. **Dereferencing Operator (`*`):**
    - **Definition:** Accesses the value at the address stored in a pointer.
    - **Example:**
+
      ```cpp
      int value = 42;
      int* p = &value;
@@ -48,6 +55,7 @@
 - **`new` and `delete`:**
   - **Purpose:** `new` allocates a single object; `delete` deallocates it.
   - **Example:**
+
     ```cpp
     int* ptr = new int(5); // Allocates a single int initialized to 5
     delete ptr;            // Deallocates the int
@@ -56,22 +64,24 @@
 - **`new[]` and `delete[]`:**
   - **Purpose:** `new[]` allocates an array of objects; `delete[]` deallocates it.
   - **Example:**
+
     ```cpp
     int* arr = new int[100]; // Allocates an array of 100 ints
     delete[] arr;            // Deallocates the array
     ```
 
 **Key Points:**
+
 - **Memory Leaks:** Occur if allocated memory is not properly deallocated.
 - **Dangling Pointers:** Pointers that reference deallocated memory should be set to `nullptr` after deletion to prevent undefined behavior.
 - **Smart Pointers:** Use `std::unique_ptr` or `std::shared_ptr` to manage dynamic memory automatically, preventing memory leaks and dangling pointers.
 
 ### Best Practices for Memory Management
+
 - **Always pair `new` with `delete` and `new[]` with `delete[]`.**
 - **Use smart pointers (`std::unique_ptr`, `std::shared_ptr`) for automatic memory management.**
 - **Avoid dynamic memory allocation when stack allocation is sufficient.**
 - **Regularly check for memory leaks and dangling pointers in your code.**
-
 
 ### C++ Memory Management Exercise
 
@@ -138,22 +148,22 @@ int main() {
 }
 ```
 
-### Questions:
+### Questions
 
 1. **Dynamic Memory Allocation:**
    - Describe how the 2D array is allocated in the `create2DArray` function. What does the function return?
-   
+
    - ANS: The function creates a dynamically allocated 2D array, and return a pointer to the memory address of that array
 
 2. **Memory Leaks:**
    - Identify the line in the `main` function that leads to a memory leak. Explain why it causes a memory leak and how you would fix it.
-   
-   - ANS: the leakedPtr is initialized with dynamic memory but never deallocated creating a memory leak. To fix it delete should be called before the program exits. 
+
+   - ANS: the leakedPtr is initialized with dynamic memory but never deallocated creating a memory leak. To fix it delete should be called before the program exits.
 
 3. **Uninitialized Pointers:**
    - What is the potential issue with the `uninitializedPtr` variable? Why is using it without initialization problematic?
 
-   - ANS: If it is called it will lead to undefined behavior as it points to a memory address that has not been assigned. 
+   - ANS: If it is called it will lead to undefined behavior as it points to a memory address that has not been assigned.
 
 4. **Pointer to Pointer:**
    - Explain the concept of a pointer to a pointer using the variables `ptr` and `ptrToPtr` in the `main` function. What do `ptr` and `ptrToPtr` each point to?

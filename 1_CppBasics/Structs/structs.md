@@ -1,18 +1,21 @@
 # Structs In C++
 
 ### Definition
+
 Structs or Structures in C++ are essentially a container where related variables can be stored. **The access to all members in the struct is public by default.**
 
 ### Struct Use Case
+
 Though in C++ structs have the same functionality as classes they are typically not used in the same way.
 
 **A struct is typically used for creating passive data structures, with public data members, and do not include member functions.**
 
-
 ### Members
+
 Each variable stored in the struct is called a member.
 
-#### Typical Struct Members:
+#### Typical Struct Members
+
 1. **Data Members:** Variables of any data type, inlcuding fundamental (int, float, char, etc.) or user-defined types (other stucts or classes), arrays, pointers, etc.
 
 ```cpp
@@ -72,7 +75,8 @@ struct Network {
 };
 ```
 
-#### Non-Typical Class Members:
+#### Non-Typical Class Members
+
 1. **Member Functions:** functions that operate on the data members, constructors, destructors, overloaded parameters (=, +, etc.)
 
 ```cpp
@@ -120,19 +124,21 @@ struct Library {
 3. **Nested Types in Structs:** A struct in C++ can contain other structs, classes, or unions either as members or defined within the struct itself. This is useful for grouping related types together and organizing code more logically.
 
 4. **Access Specifiers in Structs:** Access specifiers (public, protected, private) control the visibility and accessibility of members within a struct. They determine whether members can be accessed from outside the struct or from derived classes.
+
 - **public:** Members are accessible from anywhere where the object is visible.
 - **protected:** Members are accessible within the struct and its derived classes, but not from outside.
 - **private:** Members are accessible only within the struct and not from derived classes or outside.
 
-
 ### Declaration and Initialization
 
 #### Declaration
+
 struct StructName {
     member vars
 };
 
 Example:
+
 ```cpp
 // syntax struct StructName {};
 struct SomeStruct {
