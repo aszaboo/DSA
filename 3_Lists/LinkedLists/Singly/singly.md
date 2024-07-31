@@ -1,7 +1,3 @@
-Here is the modified Markdown file with explanations for each function in the `LinkedList` class:
-
----
-
 # Linked Lists
 
 ## What is a linked list?

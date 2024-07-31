@@ -1,7 +1,7 @@
 #include "sequential-list.h"
 
 SequentialList::SequentialList(unsigned int cap) {
-
+    
 }
 
 
