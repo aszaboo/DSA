@@ -1,0 +1,1 @@
+/usr/bin/c++ -std=c++14 -Wall  CMakeFiles/syde223-a1.dir/sequential-list.cpp.o CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o CMakeFiles/syde223-a1.dir/test.cpp.o -o syde223-a1 
