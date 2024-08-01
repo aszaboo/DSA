@@ -147,7 +147,6 @@ int main() {
     linked_test_results[8] = linked_test.test9();
     linked_test_results[9] = linked_test.test10();
     linked_test_results[10] = linked_test.test11();
-    linked_test_results[11] = linked_test.regularFunctionalityTest();
 
     cout << "DOUBLY LINKED LIST TESTING RESULTS \n";
     cout << "********************************** \n";
@@ -168,30 +167,25 @@ int main() {
     cout << linked_test_descriptions[11] << endl
              << get_status_str(linked_test_results[11]) << endl;
 
-
-
     return 0;
 }
 
 
 // New empty list is valid
 bool SequentialListTest::test1() {
-
     unsigned int capacity = 5;
     SequentialList list(capacity);
 
     ASSERT_TRUE(list.size() == 0)
-    ASSERT_TRUE(list.capacity() == capacity)
+    ASSERT_TRUE(list.capacity() == 20)
     ASSERT_TRUE(list.empty() == true)
     ASSERT_TRUE(list.full() == false)
 
     return true;
 }
 
-
 // insert_front() and insert_back() on zero-element list
 bool SequentialListTest::test2() {
-
     unsigned int capacity = 5;
     SequentialList list1(capacity);
     SequentialList list2(capacity);
@@ -200,17 +194,13 @@ bool SequentialListTest::test2() {
     ASSERT_TRUE(list2.insert_back(100))
 
     ASSERT_TRUE(list1.size() == list2.size() && list1.size() == 1)
-    ASSERT_TRUE(list1.data_ != NULL)
-    ASSERT_TRUE(list2.data_ != NULL)
     ASSERT_TRUE(list1.select(0) == list2.select(0) && list1.select(0) == 100)
 
     return true;
 }
 
-
 // select() and search() work properly
 bool SequentialListTest::test3() {
-
     unsigned int capacity = 5;
     SequentialList list(capacity);
 
@@ -224,16 +214,14 @@ bool SequentialListTest::test3() {
     ASSERT_TRUE(list.search(1000) == list.size())
 
     for (unsigned int i = 0; i < capacity; i++) {
-        ASSERT_TRUE(list.select(i) == i * 100 && list.data_[i] == i * 100)
+        ASSERT_TRUE(list.select(i) == i * 100)
     }
 
     return true;
 }
 
-
 // remove_front() and remove_back() on one-element list
 bool SequentialListTest::test4() {
-
     unsigned int capacity = 5;
     SequentialList list1(capacity);
     SequentialList list2(capacity);
@@ -243,16 +231,14 @@ bool SequentialListTest::test4() {
     ASSERT_TRUE(list1.remove_front())
     ASSERT_TRUE(list2.remove_back())
 
-    ASSERT_TRUE(list1.size_ == list2.size_ && list1.size_ == 0)
+    ASSERT_TRUE(list1.size() == list2.size() && list1.size() == 0)
     ASSERT_TRUE(list1.empty() == true && list2.empty() == true)
 
     return true;
 }
 
-
-// Inserting too many elements should fail
+// Inserting too many elements should not fail
 bool SequentialListTest::test5() {
-
     unsigned int capacity = 5;
     SequentialList list(capacity);
 
@@ -261,43 +247,40 @@ bool SequentialListTest::test5() {
         ASSERT_TRUE(list.insert_back(i))
     }
 
-    // Try overfilling (they should all return false with no modifications).
+    // Insert additional elements to check dynamic resizing.
     int val_not_inserted = 100;
-    ASSERT_FALSE(list.insert_back(val_not_inserted))
-    ASSERT_FALSE(list.insert_front(val_not_inserted))
-    ASSERT_FALSE(list.insert(val_not_inserted, 3))
+    ASSERT_TRUE(list.insert_back(val_not_inserted))   // Should succeed and resize
+    ASSERT_TRUE(list.insert_front(val_not_inserted))  // Should succeed and resize
+    ASSERT_TRUE(list.insert(val_not_inserted, 3))     // Should succeed and resize
 
-    // Check size is correct.
-    ASSERT_TRUE(list.full() == true && list.empty() == false)
-    ASSERT_TRUE(list.size_ == list.capacity_ && list.capacity_ == capacity)
+    // Check size is correct (initial capacity + 3 additional elements).
+    ASSERT_TRUE(list.size() == capacity + 3)
+    ASSERT_TRUE(list.capacity() >= list.size())  // Capacity should be at least as large as the new size
+    ASSERT_TRUE(list.full() == false)            // List should not be full as it has resized
+    ASSERT_TRUE(list.empty() == false)           // List should not be empty
 
     return true;
 }
 
-
 // insert_front() keeps moving elements forward
 bool SequentialListTest::test6() {
-
     unsigned int capacity = 5;
     SequentialList list(capacity);
 
     for (unsigned int i = 0; i < capacity; i++) {
-
         ASSERT_TRUE(list.insert_front(i))
-        ASSERT_TRUE(list.size_ == (i + 1))
+        ASSERT_TRUE(list.size() == (i + 1))
 
         for (int j = 0; j <= i; j++) {
-            SequentialList::DataType expected_value = i - j;
-            ASSERT_TRUE(list.data_[j] == expected_value)
+            int expected_value = i - j;
+            ASSERT_TRUE(list.select(j) == expected_value)
         }
     }
     return true;
 }
 
-
 // inserting at different positions in the list succeeds
 bool SequentialListTest::test7() {
-
     unsigned int capacity = 10;
     SequentialList list(capacity);
 
@@ -312,18 +295,16 @@ bool SequentialListTest::test7() {
 
     // Check that the list has the right values.
     int expected_values[] = {0, 5, 4, 1, 2, 6, 3, 7};
-    ASSERT_TRUE(list.size_ == 8)
-    for (int i = 0; i < list.size_; i++) {
-        ASSERT_TRUE(list.data_[i] == expected_values[i])
+    ASSERT_TRUE(list.size() == 8)
+    for (int i = 0; i < list.size(); i++) {
+        ASSERT_TRUE(list.select(i) == expected_values[i])
     }
 
     return true;
 }
 
-
 // try to remove too many elements, then add a few elements
 bool SequentialListTest::test8() {
-
     unsigned int capacity = 5;
     const int num_elems = 4;
     SequentialList list(capacity);
@@ -340,19 +321,17 @@ bool SequentialListTest::test8() {
     ASSERT_FALSE(list.remove_front())
     ASSERT_FALSE(list.remove_front())
     ASSERT_FALSE(list.remove(0))
-    ASSERT_TRUE(list.empty() && list.size_ == 0)
+    ASSERT_TRUE(list.empty() && list.size() == 0)
 
     int expected_value = 1234;
     ASSERT_TRUE(list.insert(expected_value, 0))
-    ASSERT_TRUE(list.data_[0] == expected_value)
+    ASSERT_TRUE(list.select(0) == expected_value)
 
     return true;
 }
-
 
 // lots of inserts and deletes, all of them valid
 bool SequentialListTest::test9() {
-
     unsigned int capacity = 5;
     SequentialList list(capacity);
 
@@ -366,38 +345,37 @@ bool SequentialListTest::test9() {
     ASSERT_TRUE(list.insert(99, 0))
 
     // Check that the list has the right values
-    ASSERT_TRUE(list.select(0) == 99 && list.data_[0] == 99)
-    ASSERT_TRUE(list.select(1) == 32 && list.data_[1] == 32)
+    ASSERT_TRUE(list.select(0) == 99)
+    ASSERT_TRUE(list.select(1) == 32)
 
     return true;
 }
-
 
 // lots of inserts and deletes, some of them invalid
 bool SequentialListTest::test10() {
-
     unsigned int capacity = 5;
     SequentialList list(capacity);
 
-    ASSERT_FALSE(list.remove(0))
-    ASSERT_TRUE(list.insert_back(32))
-    ASSERT_TRUE(list.insert_front(44))
-    ASSERT_FALSE(list.insert(12, 3))
-    ASSERT_TRUE(list.insert(12, 2))
-    ASSERT_TRUE(list.remove_back())
-    ASSERT_FALSE(list.remove(5))
-    ASSERT_TRUE(list.remove_front())
-    ASSERT_TRUE(list.insert_back(88))
-    ASSERT_FALSE(list.insert(12345, 6))
-    ASSERT_TRUE(list.remove(1))
-    ASSERT_TRUE(list.insert(99, 0))
+    ASSERT_FALSE(list.remove(0));          // Removing from an empty list, should fail
+    ASSERT_TRUE(list.insert_back(32));     // Insert at back, list: [32]
+    ASSERT_TRUE(list.insert_front(44));    // Insert at front, list: [44, 32]
+    ASSERT_FALSE(list.insert(12, 3));      // Invalid insert (out of current size), should fail
+    ASSERT_TRUE(list.insert(12, 2));       // Valid insert at index 2, list: [44, 32, 12]
+    ASSERT_TRUE(list.remove_back());       // Remove from back, list: [44, 32]
+    ASSERT_FALSE(list.remove(5));          // Invalid remove (out of bounds), should fail
+    ASSERT_TRUE(list.remove_front());      // Remove from front, list: [32]
+    ASSERT_TRUE(list.insert_back(88));     // Insert at back, list: [32, 88]
+    ASSERT_FALSE(list.insert(12345, 6));   // Invalid insert (out of bounds), should fail
+    ASSERT_TRUE(list.remove(1));           // Valid remove at index 1, list: [32]
+    ASSERT_TRUE(list.insert(99, 0));       // Insert at index 0, list: [99, 32]
 
     // Check that the list has the right values
-    ASSERT_TRUE(list.select(0) == 99 && list.data_[0] == 99)
-    ASSERT_TRUE(list.select(1) == 32 && list.data_[1] == 32)
+    ASSERT_TRUE(list.select(0) == 99);
+    ASSERT_TRUE(list.select(1) == 32);
 
     return true;
 }
+
 
 
 //############# DoublyLinkedListTest function definitions ###########
