@@ -11,3 +11,6 @@ add_executable(fibonacci
 
 add_executable(factorial
         factorial.cpp)
+
+add_executable(hanoi
+        hanoi-tower.cpp)
