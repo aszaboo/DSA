@@ -56,6 +56,4 @@ public:
 
 ## Memory Management
 
-- **Capacity vs. Size**: Capacity (`capacity_`) is the total number of elements that can be stored without resizing, while size (`size_`) is the current number of elements in the list. Managing these properties carefully is important to avoid unnecessary resizing operations, which can be costly in terms of performance.
-
-- **Resizing Strategies**: When the list reaches its capacity, resizing typically involves allocating a new, larger block of memory (often doubling the current capacity) and copying existing elements into it. This approach maintains efficient amortized time for insertion operations, as the number of resizing operations is minimized.
+- **Resizing Strategies**: When the list reaches its capacity, resizing involves allocating a new, larger block of memory (often doubling the current capacity) and copying existing elements into it. This approach maintains efficient amortized time for insertion operations, as the number of resizing operations is minimized. A standard approach for shrinking the array is when the size of the array is 25% of the capacity a new array of 50% of the size is made and elements are copied over.
