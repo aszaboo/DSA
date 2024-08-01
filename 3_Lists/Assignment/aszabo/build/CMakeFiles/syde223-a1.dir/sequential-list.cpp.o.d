@@ -1,7 +1,7 @@
 CMakeFiles/syde223-a1.dir/sequential-list.cpp.o: \
- /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/sequential-list.cpp \
+ /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/sequential-list.cpp \
  /usr/include/stdc-predef.h \
- /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/sequential-list.h \
+ /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/sequential-list.h \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

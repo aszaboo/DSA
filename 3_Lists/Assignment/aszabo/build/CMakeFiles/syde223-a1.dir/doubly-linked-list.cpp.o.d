@@ -1,7 +1,7 @@
 CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o: \
- /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/doubly-linked-list.cpp \
+ /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/doubly-linked-list.cpp \
  /usr/include/stdc-predef.h \
- /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/doubly-linked-list.h \
+ /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/doubly-linked-list.h \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

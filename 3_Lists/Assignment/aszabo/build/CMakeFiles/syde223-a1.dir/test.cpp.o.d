@@ -1,5 +1,5 @@
 CMakeFiles/syde223-a1.dir/test.cpp.o: \
- /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/test.cpp \
+ /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/test.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -144,8 +144,8 @@ CMakeFiles/syde223-a1.dir/test.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/sequential-list.h \
- /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/doubly-linked-list.h \
+ /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/sequential-list.h \
+ /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/doubly-linked-list.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \

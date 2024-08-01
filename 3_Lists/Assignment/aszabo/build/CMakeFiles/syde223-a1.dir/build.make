@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo
+CMAKE_SOURCE_DIR = /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/build
+CMAKE_BINARY_DIR = /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/syde223-a1.dir/depend.make
@@ -72,44 +72,44 @@ include CMakeFiles/syde223-a1.dir/flags.make
 CMakeFiles/syde223-a1.dir/sequential-list.cpp.o: CMakeFiles/syde223-a1.dir/flags.make
 CMakeFiles/syde223-a1.dir/sequential-list.cpp.o: ../sequential-list.cpp
 CMakeFiles/syde223-a1.dir/sequential-list.cpp.o: CMakeFiles/syde223-a1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/syde223-a1.dir/sequential-list.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/syde223-a1.dir/sequential-list.cpp.o -MF CMakeFiles/syde223-a1.dir/sequential-list.cpp.o.d -o CMakeFiles/syde223-a1.dir/sequential-list.cpp.o -c /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/sequential-list.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/syde223-a1.dir/sequential-list.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/syde223-a1.dir/sequential-list.cpp.o -MF CMakeFiles/syde223-a1.dir/sequential-list.cpp.o.d -o CMakeFiles/syde223-a1.dir/sequential-list.cpp.o -c /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/sequential-list.cpp
 
 CMakeFiles/syde223-a1.dir/sequential-list.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/syde223-a1.dir/sequential-list.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/sequential-list.cpp > CMakeFiles/syde223-a1.dir/sequential-list.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/sequential-list.cpp > CMakeFiles/syde223-a1.dir/sequential-list.cpp.i
 
 CMakeFiles/syde223-a1.dir/sequential-list.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/syde223-a1.dir/sequential-list.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/sequential-list.cpp -o CMakeFiles/syde223-a1.dir/sequential-list.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/sequential-list.cpp -o CMakeFiles/syde223-a1.dir/sequential-list.cpp.s
 
 CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o: CMakeFiles/syde223-a1.dir/flags.make
 CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o: ../doubly-linked-list.cpp
 CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o: CMakeFiles/syde223-a1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o -MF CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o.d -o CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o -c /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/doubly-linked-list.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o -MF CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o.d -o CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o -c /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/doubly-linked-list.cpp
 
 CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/doubly-linked-list.cpp > CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/doubly-linked-list.cpp > CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.i
 
 CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/doubly-linked-list.cpp -o CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/doubly-linked-list.cpp -o CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.s
 
 CMakeFiles/syde223-a1.dir/test.cpp.o: CMakeFiles/syde223-a1.dir/flags.make
 CMakeFiles/syde223-a1.dir/test.cpp.o: ../test.cpp
 CMakeFiles/syde223-a1.dir/test.cpp.o: CMakeFiles/syde223-a1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/syde223-a1.dir/test.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/syde223-a1.dir/test.cpp.o -MF CMakeFiles/syde223-a1.dir/test.cpp.o.d -o CMakeFiles/syde223-a1.dir/test.cpp.o -c /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/syde223-a1.dir/test.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/syde223-a1.dir/test.cpp.o -MF CMakeFiles/syde223-a1.dir/test.cpp.o.d -o CMakeFiles/syde223-a1.dir/test.cpp.o -c /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/test.cpp
 
 CMakeFiles/syde223-a1.dir/test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/syde223-a1.dir/test.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/test.cpp > CMakeFiles/syde223-a1.dir/test.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/test.cpp > CMakeFiles/syde223-a1.dir/test.cpp.i
 
 CMakeFiles/syde223-a1.dir/test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/syde223-a1.dir/test.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/test.cpp -o CMakeFiles/syde223-a1.dir/test.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/test.cpp -o CMakeFiles/syde223-a1.dir/test.cpp.s
 
 # Object files for target syde223-a1
 syde223__a1_OBJECTS = \
@@ -125,7 +125,7 @@ syde223-a1: CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o
 syde223-a1: CMakeFiles/syde223-a1.dir/test.cpp.o
 syde223-a1: CMakeFiles/syde223-a1.dir/build.make
 syde223-a1: CMakeFiles/syde223-a1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable syde223-a1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable syde223-a1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/syde223-a1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -137,6 +137,6 @@ CMakeFiles/syde223-a1.dir/clean:
 .PHONY : CMakeFiles/syde223-a1.dir/clean
 
 CMakeFiles/syde223-a1.dir/depend:
-	cd /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/build /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/build /workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/build/CMakeFiles/syde223-a1.dir/DependInfo.cmake --color=$(COLOR)
+	cd /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/build /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/build /workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/build/CMakeFiles/syde223-a1.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/syde223-a1.dir/depend
 

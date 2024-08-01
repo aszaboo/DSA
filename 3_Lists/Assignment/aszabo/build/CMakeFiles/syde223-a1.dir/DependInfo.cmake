@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/doubly-linked-list.cpp" "CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o" "gcc" "CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o.d"
-  "/workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/sequential-list.cpp" "CMakeFiles/syde223-a1.dir/sequential-list.cpp.o" "gcc" "CMakeFiles/syde223-a1.dir/sequential-list.cpp.o.d"
-  "/workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/test.cpp" "CMakeFiles/syde223-a1.dir/test.cpp.o" "gcc" "CMakeFiles/syde223-a1.dir/test.cpp.o.d"
+  "/workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/doubly-linked-list.cpp" "CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o" "gcc" "CMakeFiles/syde223-a1.dir/doubly-linked-list.cpp.o.d"
+  "/workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/sequential-list.cpp" "CMakeFiles/syde223-a1.dir/sequential-list.cpp.o" "gcc" "CMakeFiles/syde223-a1.dir/sequential-list.cpp.o.d"
+  "/workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/test.cpp" "CMakeFiles/syde223-a1.dir/test.cpp.o" "gcc" "CMakeFiles/syde223-a1.dir/test.cpp.o.d"
   )
 
 # Targets to which this target links.

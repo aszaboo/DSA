@@ -1,3 +1,3 @@
-/workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/build/CMakeFiles/syde223-a1.dir
-/workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/build/CMakeFiles/edit_cache.dir
-/workspaces/SYDE223/DSA/3_LinkedLists/Assignment/aszabo/build/CMakeFiles/rebuild_cache.dir
+/workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/build/CMakeFiles/syde223-a1.dir
+/workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/build/CMakeFiles/edit_cache.dir
+/workspaces/SYDE223/DSA/3_Lists/Assignment/aszabo/build/CMakeFiles/rebuild_cache.dir
