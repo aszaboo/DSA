@@ -233,17 +233,15 @@ void permute(std::string str, int l, int r) {
 ### Steps to Prove Big O
 
 1. **Understand the Definition**:
-   - A function $$\( f(n) \)$$ is $$\( O(g(n)) \)$$ if there exist positive constants $$\( C \)$$ and $$\( n_0 \)$$ such that:
-     $$
-     |f(n)| \leq C \cdot |g(n)| \quad \text{for all } n \geq n_0
-     $$
+   - A function f(n) is O(g(n)) if there exist positive constants C and n_0 such that:
+     $$|f(n)| \leq C \cdot |g(n)| \quad \text{for all } n \geq n_0$$
 
 2. **Identify the Functions**:
-   - $$\( f(n) \)$$: The function you are analyzing.
-   - $$\( g(n) \)$$: The function that serves as the upper bound.
+   - f(n): The function you are analyzing.
+   - g(n): The function that serves as the upper bound.
 
 3. **Find the Constants**:
-   - Determine the constants $$\( C \)$$ and $$\( n_0 \)$$.
+   - Determine the constants $$C$$ and $$n_0$$.
 
 4. **Set Up the Inequality**:
    - Show that there exists a $$\( C \)$$ and $$\( n_0 \)$$ such that $$\( |f(n)| \leq C \cdot |g(n)| \)$$ for all $$\( n \geq n_0 \)$$.
