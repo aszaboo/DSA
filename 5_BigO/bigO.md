@@ -241,7 +241,7 @@ void permute(std::string str, int l, int r) {
    - g(n): The function that serves as the upper bound.
 
 3. **Find the Constants**:
-   - Determine the constants $$C$$ and $$n_0$$.
+   - Determine the constants $$C and n_0$$.
 
 4. **Set Up the Inequality**:
    - Show that there exists a $$\( C \)$$ and $$\( n_0 \)$$ such that $$\( |f(n)| \leq C \cdot |g(n)| \)$$ for all $$\( n \geq n_0 \)$$.
