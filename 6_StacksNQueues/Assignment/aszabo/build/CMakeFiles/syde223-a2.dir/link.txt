@@ -1,0 +1,1 @@
+/usr/bin/c++ -std=c++11 -Wall  -rdynamic CMakeFiles/syde223-a2.dir/dynamic-stack.cpp.o CMakeFiles/syde223-a2.dir/circular-queue.cpp.o CMakeFiles/syde223-a2.dir/test.cpp.o -o syde223-a2 

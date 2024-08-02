@@ -1,0 +1,3 @@
+/workspaces/SYDE223/DSA/6_StacksNQueues/Assignment/aszabo/build/CMakeFiles/syde223-a2.dir
+/workspaces/SYDE223/DSA/6_StacksNQueues/Assignment/aszabo/build/CMakeFiles/edit_cache.dir
+/workspaces/SYDE223/DSA/6_StacksNQueues/Assignment/aszabo/build/CMakeFiles/rebuild_cache.dir

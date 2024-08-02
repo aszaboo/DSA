@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/SYDE223/DSA/4_Recursion/Examples
+CMAKE_SOURCE_DIR = /workspaces/SYDE223/DSA/6_StacksNQueues/Assignment/aszabo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/SYDE223/DSA/4_Recursion/Examples/build
+CMAKE_BINARY_DIR = /workspaces/SYDE223/DSA/6_StacksNQueues/Assignment/aszabo/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/SYDE223/DSA/4_Recursion/Examples/build/CMakeFiles /workspaces/SYDE223/DSA/4_Recursion/Examples/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/SYDE223/DSA/6_StacksNQueues/Assignment/aszabo/build/CMakeFiles /workspaces/SYDE223/DSA/6_StacksNQueues/Assignment/aszabo/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/SYDE223/DSA/4_Recursion/Examples/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/SYDE223/DSA/6_StacksNQueues/Assignment/aszabo/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,115 +117,89 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named fibonacci
+# Target rules for targets named syde223-a2
 
 # Build rule for target.
-fibonacci: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fibonacci
-.PHONY : fibonacci
+syde223-a2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 syde223-a2
+.PHONY : syde223-a2
 
 # fast build rule for target.
-fibonacci/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fibonacci.dir/build.make CMakeFiles/fibonacci.dir/build
-.PHONY : fibonacci/fast
+syde223-a2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/syde223-a2.dir/build.make CMakeFiles/syde223-a2.dir/build
+.PHONY : syde223-a2/fast
 
-#=============================================================================
-# Target rules for targets named factorial
-
-# Build rule for target.
-factorial: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 factorial
-.PHONY : factorial
-
-# fast build rule for target.
-factorial/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/factorial.dir/build.make CMakeFiles/factorial.dir/build
-.PHONY : factorial/fast
-
-#=============================================================================
-# Target rules for targets named hanoi
-
-# Build rule for target.
-hanoi: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hanoi
-.PHONY : hanoi
-
-# fast build rule for target.
-hanoi/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hanoi.dir/build.make CMakeFiles/hanoi.dir/build
-.PHONY : hanoi/fast
-
-factorial.o: factorial.cpp.o
-.PHONY : factorial.o
+circular-queue.o: circular-queue.cpp.o
+.PHONY : circular-queue.o
 
 # target to build an object file
-factorial.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/factorial.dir/build.make CMakeFiles/factorial.dir/factorial.cpp.o
-.PHONY : factorial.cpp.o
+circular-queue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/syde223-a2.dir/build.make CMakeFiles/syde223-a2.dir/circular-queue.cpp.o
+.PHONY : circular-queue.cpp.o
 
-factorial.i: factorial.cpp.i
-.PHONY : factorial.i
+circular-queue.i: circular-queue.cpp.i
+.PHONY : circular-queue.i
 
 # target to preprocess a source file
-factorial.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/factorial.dir/build.make CMakeFiles/factorial.dir/factorial.cpp.i
-.PHONY : factorial.cpp.i
+circular-queue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/syde223-a2.dir/build.make CMakeFiles/syde223-a2.dir/circular-queue.cpp.i
+.PHONY : circular-queue.cpp.i
 
-factorial.s: factorial.cpp.s
-.PHONY : factorial.s
+circular-queue.s: circular-queue.cpp.s
+.PHONY : circular-queue.s
 
 # target to generate assembly for a file
-factorial.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/factorial.dir/build.make CMakeFiles/factorial.dir/factorial.cpp.s
-.PHONY : factorial.cpp.s
+circular-queue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/syde223-a2.dir/build.make CMakeFiles/syde223-a2.dir/circular-queue.cpp.s
+.PHONY : circular-queue.cpp.s
 
-fibonacci.o: fibonacci.cpp.o
-.PHONY : fibonacci.o
+dynamic-stack.o: dynamic-stack.cpp.o
+.PHONY : dynamic-stack.o
 
 # target to build an object file
-fibonacci.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fibonacci.dir/build.make CMakeFiles/fibonacci.dir/fibonacci.cpp.o
-.PHONY : fibonacci.cpp.o
+dynamic-stack.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/syde223-a2.dir/build.make CMakeFiles/syde223-a2.dir/dynamic-stack.cpp.o
+.PHONY : dynamic-stack.cpp.o
 
-fibonacci.i: fibonacci.cpp.i
-.PHONY : fibonacci.i
+dynamic-stack.i: dynamic-stack.cpp.i
+.PHONY : dynamic-stack.i
 
 # target to preprocess a source file
-fibonacci.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fibonacci.dir/build.make CMakeFiles/fibonacci.dir/fibonacci.cpp.i
-.PHONY : fibonacci.cpp.i
+dynamic-stack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/syde223-a2.dir/build.make CMakeFiles/syde223-a2.dir/dynamic-stack.cpp.i
+.PHONY : dynamic-stack.cpp.i
 
-fibonacci.s: fibonacci.cpp.s
-.PHONY : fibonacci.s
+dynamic-stack.s: dynamic-stack.cpp.s
+.PHONY : dynamic-stack.s
 
 # target to generate assembly for a file
-fibonacci.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fibonacci.dir/build.make CMakeFiles/fibonacci.dir/fibonacci.cpp.s
-.PHONY : fibonacci.cpp.s
+dynamic-stack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/syde223-a2.dir/build.make CMakeFiles/syde223-a2.dir/dynamic-stack.cpp.s
+.PHONY : dynamic-stack.cpp.s
 
-hanoi-tower.o: hanoi-tower.cpp.o
-.PHONY : hanoi-tower.o
+test.o: test.cpp.o
+.PHONY : test.o
 
 # target to build an object file
-hanoi-tower.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hanoi.dir/build.make CMakeFiles/hanoi.dir/hanoi-tower.cpp.o
-.PHONY : hanoi-tower.cpp.o
+test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/syde223-a2.dir/build.make CMakeFiles/syde223-a2.dir/test.cpp.o
+.PHONY : test.cpp.o
 
-hanoi-tower.i: hanoi-tower.cpp.i
-.PHONY : hanoi-tower.i
+test.i: test.cpp.i
+.PHONY : test.i
 
 # target to preprocess a source file
-hanoi-tower.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hanoi.dir/build.make CMakeFiles/hanoi.dir/hanoi-tower.cpp.i
-.PHONY : hanoi-tower.cpp.i
+test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/syde223-a2.dir/build.make CMakeFiles/syde223-a2.dir/test.cpp.i
+.PHONY : test.cpp.i
 
-hanoi-tower.s: hanoi-tower.cpp.s
-.PHONY : hanoi-tower.s
+test.s: test.cpp.s
+.PHONY : test.s
 
 # target to generate assembly for a file
-hanoi-tower.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hanoi.dir/build.make CMakeFiles/hanoi.dir/hanoi-tower.cpp.s
-.PHONY : hanoi-tower.cpp.s
+test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/syde223-a2.dir/build.make CMakeFiles/syde223-a2.dir/test.cpp.s
+.PHONY : test.cpp.s
 
 # Help Target
 help:
@@ -235,18 +209,16 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... factorial"
-	@echo "... fibonacci"
-	@echo "... hanoi"
-	@echo "... factorial.o"
-	@echo "... factorial.i"
-	@echo "... factorial.s"
-	@echo "... fibonacci.o"
-	@echo "... fibonacci.i"
-	@echo "... fibonacci.s"
-	@echo "... hanoi-tower.o"
-	@echo "... hanoi-tower.i"
-	@echo "... hanoi-tower.s"
+	@echo "... syde223-a2"
+	@echo "... circular-queue.o"
+	@echo "... circular-queue.i"
+	@echo "... circular-queue.s"
+	@echo "... dynamic-stack.o"
+	@echo "... dynamic-stack.i"
+	@echo "... dynamic-stack.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 

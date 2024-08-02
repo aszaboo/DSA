@@ -107,9 +107,9 @@ When designing recursive algorithms, it is essential to address the following qu
 ### Analysis
 
 - **Fibonacci Recursive vs. Iterative**:
-  - The recursive approach for Fibonacci has exponential time complexity \(O(2^n)\), making it significantly slower as \(n\) increases.
-  - The iterative approach has linear time complexity \(O(n)\), making it much faster for the same input.
+  - The recursive approach for Fibonacci has exponential time complexity O(2^n), making it significantly slower as \(n\) increases.
+  - The iterative approach has linear time complexity O(n), making it much faster for the same input.
 
 - **Factorial Recursive vs. Iterative**:
-  - Both approaches for calculating factorial have linear time complexity \(O(n)\).
+  - Both approaches for calculating factorial have linear time complexity O(n).
   - The actual time taken for both approaches is very close, with the iterative approach being slightly faster.

@@ -43,7 +43,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/fibonacci.dir/DependInfo.cmake"
-  "CMakeFiles/factorial.dir/DependInfo.cmake"
-  "CMakeFiles/hanoi.dir/DependInfo.cmake"
+  "CMakeFiles/syde223-a2.dir/DependInfo.cmake"
   )

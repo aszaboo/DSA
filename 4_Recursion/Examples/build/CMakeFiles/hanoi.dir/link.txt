@@ -1,0 +1,1 @@
+/usr/bin/c++ -std=c++14 -Wall  CMakeFiles/hanoi.dir/hanoi-tower.cpp.o -o hanoi 
