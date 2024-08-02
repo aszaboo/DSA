@@ -261,7 +261,7 @@ void permute(std::string str, int l, int r) {
    - $$\( g(n) = n^2 \)$$
 
 3. **Find the Constants**:
-   - We need to find ```math C``` and ```math n_0``` such that:
+   - We need to find C and n_0 such that:
     $$\( 3n^2 + 5n + 2 \leq C \cdot n^2 \)$$.
 
 4. **Set Up the Inequality**:
