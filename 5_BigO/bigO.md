@@ -241,25 +241,28 @@ void permute(std::string str, int l, int r) {
    - g(n): The function that serves as the upper bound.
 
 3. **Find the Constants**:
-   - Determine the constants $$C and n_0$$.
+   - Determine the constants C and n_0.
 
 4. **Set Up the Inequality**:
-   - Show that there exists a $$\( C \)$$ and $$\( n_0 \)$$ such that $$\( |f(n)| \leq C \cdot |g(n)| \)$$ for all $$\( n \geq n_0 \)$$.
+   - Show that there exists a C and n_0 such that 
+   $$\( |f(n)| \leq C \cdot |g(n)| \)$$ for all $$\( n \geq n_0 \)$$.
 
 5. **Prove the Inequality**:
-   - Demonstrate the inequality holds true for the chosen $$\( C \)$$ and $$\( n_0 \)$$.
+   - Demonstrate the inequality holds true for the chosen C and  n_0.
 
-### Example: Proving that \( 3n^2 + 5n + 2 \) is \( O(n^2) \)
+### Example: Proving that \( 3n^2 + 5n + 2 \) is O(n^2)
 
 1. **Understand the Definition**:
-   - We need to show that $$\( 3n^2 + 5n + 2 \leq C \cdot n^2 \)$$ for some constants $$\( C \)$$ and $$\( n_0 \)$$.
+   - We need to show that:
+   $$\( 3n^2 + 5n + 2 \leq C \cdot n^2 \)$$, for some constants $$\( C \)$$ and $$\( n_0 \)$$.
 
 2. **Identify the Functions**:
    - $$\( f(n) = 3n^2 + 5n + 2 \)$$
    - $$\( g(n) = n^2 \)$$
 
 3. **Find the Constants**:
-   - We need to find $$\( C \) and $$\( n_0 \) such that $$\( 3n^2 + 5n + 2 \leq C \cdot n^2 \)$$.
+   - We need to find ```math C``` and ```math n_0``` such that:
+    $$\( 3n^2 + 5n + 2 \leq C \cdot n^2 \)$$.
 
 4. **Set Up the Inequality**:
    - Divide both sides by $$\( n^2 \)$$:
