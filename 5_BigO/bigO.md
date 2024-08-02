@@ -267,13 +267,13 @@ void permute(std::string str, int l, int r) {
 
 4. **Set Up the Inequality**:
    - Divide both sides by \( n^2 \):
-     ```
+     ```markdown
      $$
      \frac{3n^2 + 5n + 2}{n^2} \leq C
      $$
      ```
    - Simplify the left-hand side:
-     ```
+     ```markdown
      $$
      3 + \frac{5}{n} + \frac{2}{n^2} \leq C
      $$
@@ -281,33 +281,33 @@ void permute(std::string str, int l, int r) {
 
 5. **Prove the Inequality**:
    - As \( n \) grows larger, the terms \( \frac{5}{n} \) and \( \frac{2}{n^2} \) approach 0. Therefore, for sufficiently large \( n \), the inequality simplifies to:
-     ```
+     ```markdown
      $$
      3 + \frac{5}{n} + \frac{2}{n^2} \leq 4
      $$
      ```
      - Choose \( C = 4 \). This means we need to find \( n_0 \) such that for all \( n \geq n_0 \), the inequality holds:
-     ```
+     ```markdown
      $$
      3 + \frac{5}{n} + \frac{2}{n^2} \leq 4
      $$
      ```
    - Let's solve for \( n_0 \):
-     ```
+     ```markdown
      $$
      \frac{5}{n} + \frac{2}{n^2} \leq 1
      $$
      ```
      - For the above inequality to hold true, \( n \) must be sufficiently large.
      - Let's try \( n_0 = 10 \):
-       ```
+       ```markdown
        $$
        \frac{5}{10} + \frac{2}{10^2} = 0.5 + 0.02 = 0.52 \leq 1
        $$
        ```
 
 So we choose \( C = 4 \) and \( n_0 = 10 \), we have:
-```
+```markdown
 $$
 3n^2 + 5n + 2 \leq 4n^2 \quad \text{for all } n \geq 10
 $$
