@@ -1,0 +1,3 @@
+/workspaces/SYDE223/DSA/7_Trees/Heaps/code/build/CMakeFiles/max-heap.dir
+/workspaces/SYDE223/DSA/7_Trees/Heaps/code/build/CMakeFiles/edit_cache.dir
+/workspaces/SYDE223/DSA/7_Trees/Heaps/code/build/CMakeFiles/rebuild_cache.dir

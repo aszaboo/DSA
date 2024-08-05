@@ -5,6 +5,7 @@
 ### Integer Types
 
 **int:**
+
 - **Definition:** Represents standard integer values. The size and range are platform-dependent but typically 32 bits.
 - **Use:** Storing whole numbers.
 - **Size:** Typically 4 bytes
@@ -14,6 +15,7 @@ int a = 5;
 ```
 
 **short:**
+
 - **Definition:** A shorter version of the integer type, typically used to save memory in large arrays of numbers.
 - **Use:** Storing smaller integers.
 - **Size:** Typically 2 bytes
@@ -23,6 +25,7 @@ short b = 100;
 ```
 
 **long:**
+
 - **Definition:** A longer version of the integer type, used for larger numbers. It can store a wider range of values than `int`.
 - **Use:** Storing larger integers.
 - **Size:** Typically 4 bytes or more
@@ -32,6 +35,7 @@ long c = 1000000L;
 ```
 
 **long long:**
+
 - **Definition:** Provides even greater range for integer values, ensuring at least 64-bit storage.
 - **Use:** Storing very large integers.
 - **Size:** Typically 8 bytes or more
@@ -43,6 +47,7 @@ long long d = 1000000000000000LL;
 ### Character Types
 
 **char:**
+
 - **Definition:** Represents a single character or small integer. The size is always 1 byte, but the range can vary based on whether it is signed or unsigned.
 - **Use:** Storing individual characters.
 - **Size:** Typically 1 byte
@@ -52,6 +57,7 @@ char e = 'A';
 ```
 
 **unsigned char:**
+
 - **Definition:** Similar to `char`, but only for non-negative values, often used for raw data.
 - **Use:** Storing small non-negative integers or characters.
 - **Size:** Typically 1 byte
@@ -61,6 +67,7 @@ unsigned char f = 255;
 ```
 
 **wchar_t:**
+
 - **Definition:** A wide character type, used to represent characters from larger character sets like Unicode.
 - **Use:** Storing wide characters.
 - **Size:** Platform-dependent (often 2 or 4 bytes)
@@ -70,6 +77,7 @@ wchar_t g = L'Ω';
 ```
 
 **char16_t and char32_t:**
+
 - **Definition:** Fixed-width character types for storing Unicode characters, introduced in C++11.
 - **Use:** Storing 16-bit or 32-bit Unicode characters.
 - **Size:** 2 bytes (char16_t) and 4 bytes (char32_t)
@@ -82,6 +90,7 @@ char32_t i = U'𠜎'; // Rare Chinese character
 ### Floating-Point Types
 
 **float:**
+
 - **Definition:** Represents single-precision floating-point numbers. Typically used for saving memory in large arrays where double's precision is not necessary.
 - **Use:** Storing floating-point numbers with single precision.
 - **Size:** Typically 4 bytes
@@ -91,6 +100,7 @@ float j = 3.14f;
 ```
 
 **double:**
+
 - **Definition:** Represents double-precision floating-point numbers. It provides more precision than `float`.
 - **Use:** Storing floating-point numbers with double precision.
 - **Size:** Typically 8 bytes
@@ -100,6 +110,7 @@ double k = 3.141592653589793;
 ```
 
 **long double:**
+
 - **Definition:** Extended-precision floating-point number. It provides even more precision than `double`.
 - **Use:** Storing floating-point numbers with extended precision.
 - **Size:** Platform-dependent, typically more precise than `double`
@@ -111,6 +122,7 @@ long double l = 3.141592653589793238L;
 ### Boolean Type
 
 **bool:**
+
 - **Definition:** Represents a Boolean value, which can either be `true` or `false`.
 - **Use:** Storing truth values.
 - **Size:** Typically 1 byte
@@ -122,6 +134,7 @@ bool m = true;
 ### Void Type
 
 **void:**
+
 - **Definition:** Indicates the absence of any type. It is used as the return type for functions that do not return a value or for pointers that point to data of unknown type.
 - **Use:** Representing no value or used in generic pointers.
 - **Size:** Not applicable
