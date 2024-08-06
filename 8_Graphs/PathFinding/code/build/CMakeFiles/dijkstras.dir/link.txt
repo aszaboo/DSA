@@ -1,0 +1,1 @@
+/usr/bin/c++ -std=c++11 -Wall  -rdynamic CMakeFiles/dijkstras.dir/dijkstras.cpp.o -o dijkstras 
