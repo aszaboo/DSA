@@ -1,0 +1,1 @@
+/usr/bin/c++ -std=c++11 -Wall  -rdynamic CMakeFiles/heap-sort.dir/heap-sort.cpp.o -o heap-sort 
