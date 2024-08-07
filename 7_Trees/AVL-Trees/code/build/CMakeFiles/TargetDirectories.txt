@@ -1,0 +1,3 @@
+/workspaces/SYDE223/DSA/7_Trees/AVL-Trees/code/build/CMakeFiles/avl-tree.dir
+/workspaces/SYDE223/DSA/7_Trees/AVL-Trees/code/build/CMakeFiles/edit_cache.dir
+/workspaces/SYDE223/DSA/7_Trees/AVL-Trees/code/build/CMakeFiles/rebuild_cache.dir
