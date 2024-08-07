@@ -1,0 +1,3 @@
+/workspaces/SYDE223/DSA/10_HashTables/Assignment/Tries/aszabo/build/CMakeFiles/syde223_a4.dir
+/workspaces/SYDE223/DSA/10_HashTables/Assignment/Tries/aszabo/build/CMakeFiles/edit_cache.dir
+/workspaces/SYDE223/DSA/10_HashTables/Assignment/Tries/aszabo/build/CMakeFiles/rebuild_cache.dir

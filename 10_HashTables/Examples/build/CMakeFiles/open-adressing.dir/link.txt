@@ -1,0 +1,1 @@
+/usr/bin/c++ -std=c++11 -Wall  -rdynamic CMakeFiles/open-adressing.dir/open-adressing.cpp.o -o open-adressing 

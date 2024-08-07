@@ -48,22 +48,25 @@ class HashTable {
             delete[] table;
       }
 
+	   int hashFunction (string str){
+	   		int length = str.length();
+   			int sum = 0;
+   			for (int i=0; i < length; i++)  sum = sum + (int)str[i];   //str[i] gets the ith char in the string
 
-	   int hashFunction (int key){
-	   		return key % CAPACITY;
+   			if(sum < 0) sum = -1 * sum; //	(if sum exceeds the max int, it will become negative, then just change it to positive.)
+
+   			return sum % CAPACITY;
 	   }
 
 
+      Node* search(string name) {
 
-      Node* search(int num) {
+            int hashIndex = hashFunction ( name );
 
-            int hashIndex = hashFunction ( num );
-
-            if (table[hashIndex] == NULL)
-                  return NULL;
+            if (table[hashIndex] == NULL)   return NULL;
             else {
                   Node *temp = table[hashIndex];
-                  while (temp != NULL && temp->idNumber != num) temp = temp->next;
+                  while (temp != NULL && temp->idName != name) temp = temp->next;
                   if (temp == NULL) return NULL;
                   else              return temp;
             }
@@ -72,13 +75,12 @@ class HashTable {
 
 
       void insert(int num, string name, string email) {
-
-      		if (  search (num) ) {
+      		if (  search (name) ) {
       			cout << "cannot insert when the same key exists." << endl;
       			return;
-			  }
+			}
 
-            int hashIndex = hashFunction ( num );
+            int hashIndex = hashFunction ( name );
 
             if (table[hashIndex] == NULL) table[hashIndex] = new Node(num, name, email);
 
@@ -92,27 +94,25 @@ class HashTable {
 		// e.g., when size reaches 75% of capacity, double the capacity.
       }
 
-      void remove(int num) {
-
-      	    if (  search (num) == NULL ) {
+      void remove(string name) {
+      		if (  search (name) == NULL ) {
       			cout << "cannot remove when the key does not exist." << endl;
       			return;
 			}
-
-            int hashIndex = hashFunction ( num );
+            int hashIndex = hashFunction ( name );
 
             if (table[hashIndex] != NULL) {
                   Node *prevNode = NULL;
                   Node *temp = table[hashIndex];
 
 				  // find the target
-                  while (temp->idNumber != num && temp->next != NULL) {
+                  while (temp->idName != name && temp->next != NULL) {
                         prevNode = temp;
                         temp = temp->next;
                   }
 
                   // temp should be the target now.
-                  if (temp->idNumber == num) {
+                  if (temp->idName == name) {
                         if (prevNode == NULL) { //it is the first node
                              Node *nextNode = temp->next;
                              delete temp;
@@ -123,15 +123,12 @@ class HashTable {
                              prevNode->next = nextNode;
                         }
                   }
-                  // else may report error, unexpected cases.
             }
-
         // here could do size--, and check if size is too small for adjustable capacity.
 		// e.g., when size is less than 20% of capacity, reduce capacity by half.
       }
 
 };
-
 
 
 int main()
@@ -145,22 +142,24 @@ int main()
 	h.insert(2001234, "andrew",  "andrew@uw.ca");
 	h.insert(5201863, "peter",  "peterw2@uw.ca");
 	h.insert(3005831, "emily",  "emily3@uw.ca");
-
-	Node* result;
-
-	h.insert(1000101, "test",  "test@uw.ca");
-	h.remove(123);
-
-	result = h.search(2001234);
-	cout<< result->idNumber << ", "<< result->idName << ", "<<  result->emailAddress << endl;
-
 	h.insert(2203234, "mary",  "mary87@uw.ca");
 
-	result = h.search(2203234);
-	cout<< result->idNumber << ", "<< result->idName << ", "<<  result->emailAddress << endl;
 
-	cout<< h.table[1234]->idName << ", "<<  h.table[1234]->next->idName << endl;
+	cout<< h.hashFunction( "jacob" ) << endl;
+	cout<< h.hashFunction( "shawn" ) << endl;
+	cout<< h.hashFunction( "max" ) << endl;
+	cout<< h.hashFunction( "grace" ) << endl;
+	cout<< h.hashFunction( "andrew" ) << endl;
+	cout<< h.hashFunction( "peter" ) << endl;
+	cout<< h.hashFunction( "emily" ) << endl;
+	cout<< h.hashFunction( "mary" ) << endl;
+
+	h.insert(1000101, "jacob",  "jacob23@uw.ca");
+	h.remove("jack");
+
+	Node* result;
+	result = h.search("grace");
+	cout<< result->idNumber << ", "<< result->idName << ", "<<  result->emailAddress << endl;
 
     return 0;
 }
-

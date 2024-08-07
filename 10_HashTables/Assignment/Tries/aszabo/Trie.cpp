@@ -1,4 +1,7 @@
 #include "Trie.h"
+#include <vector>
+#include <algorithm>
+#include <list>
 
 // trie_counter should be incremented by one after 
 // each word is checked in the 'filter' function.
@@ -6,19 +9,74 @@ int trie_counter = 0;
 
 TrieNode::TrieNode() {}
 
-Trie::Trie() {}
+Trie::Trie() {
+    root = new TrieNode();
+}
 
-Trie::~Trie() {}
+Trie::~Trie() {
+    deleteTrie(root);
+}
 
-void Trie::deleteTrie(TrieNode* node) {}
+void Trie::deleteTrie(TrieNode* node) {
+    if (!node) return;
 
-unsigned int Trie::countLeaves(TrieNode* node) const {}
+    for (auto &child : node->children) {
+        deleteTrie(child.second);
+    }
 
-unsigned int Trie::size() const {}
+    node->children.clear();
+    delete node;
+}
 
-bool Trie::insert(const std::string &word) {}
+unsigned int Trie::countLeaves(TrieNode* node) const {
+    if (!node) return 0;
 
-std::string Trie::getFirstWord() {}
+    if (node->children.empty()) return 1;
+
+    unsigned int counter = 0;
+    for (auto &child : node->children) {
+        counter += countLeaves(child.second);
+    }
+
+    return counter;
+}
+
+unsigned int Trie::size() const {
+    if (root->children.empty()) return 0;
+    return countLeaves(root);
+}
+
+bool Trie::insert(const std::string &word) {
+    if (root == nullptr) return false;
+    if (word.length() != 5) return false;
+
+    TrieNode* current = root;
+    bool inserted = false;
+
+    for (char letter : word) {
+        if (current->children.find(letter) == current->children.end()) {
+            current->children[letter] = new TrieNode();
+            inserted = true;
+        }
+        current = current->children[letter];
+    }
+
+    return inserted;
+}
+
+std::string Trie::getFirstWord() {
+    if (!root) return "";
+
+    TrieNode* current = root;
+    std::string word = "";
+
+    for (unsigned int i = 0; i < 5; ++i) {
+        word += current->children.begin()->first;
+        current = current->children.begin()->second;
+    }
+
+    return word;
+}
 
 std::list<std::string> Trie::getAllWords() const {
     std::list<std::string> words;
@@ -30,6 +88,7 @@ std::list<std::string> Trie::getAllWords() const {
 void Trie::getWordsRecursively(TrieNode *node, std::string currentWord, std::list<std::string> &words) const {
     if (currentWord.size() == 5) {
         words.push_back(currentWord);
+        return;
     }
 
     for (auto& child : node->children) {
@@ -37,8 +96,21 @@ void Trie::getWordsRecursively(TrieNode *node, std::string currentWord, std::lis
     }
 }
 
-bool Trie::filter(const std::string &guess, const std::string &pattern) {}
+// TODO
+bool Trie::filter(const string& guess, const string& pattern) {}
 
-void Trie::filterRecursively(TrieNode* node, std::string currentWord, const std::string &guess, const std::string &pattern) {}
+// TODO
+void Trie::filterRecursively(TrieNode* node, std::string currentWord, const string& guess, const string& pattern) {}
 
-void Trie::print() {}
+
+void Trie::print() {
+    if (!root) {
+        cout << "EMPTY TRIE" << endl;
+        return;
+    }
+
+    std::list<string> allWords = getAllWords();
+    for (string word : allWords) {
+        cout << word << endl;
+    }
+}

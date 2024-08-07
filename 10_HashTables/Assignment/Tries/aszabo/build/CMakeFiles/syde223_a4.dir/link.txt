@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/syde223_a4.dir/main.cpp.o CMakeFiles/syde223_a4.dir/Trie.cpp.o -o syde223_a4 

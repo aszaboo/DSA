@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include <list>
+#include <algorithm>
 #include "Trie.h"
 
 using namespace std;
@@ -105,14 +106,55 @@ void TrieTest::printReport() {
 
 // Test 1: New trie is valid
 bool TrieTest::test1() {
-    // Implement a test case which does the above description.
-    return false;
+    Trie trie;
+    cout << "checking num children: " << trie.root->children.empty() << endl;
+    ASSERT_TRUE(trie.root->children.empty())
+    cout << "checking size: " << trie.size() << endl;
+    ASSERT_TRUE(trie.size() == 0)
+    cout << "checking empty: " << trie.getAllWords().empty() << endl;
+    ASSERT_TRUE(trie.getAllWords().empty())
+    return true;
 }
 
 // Test 2: Inserting new words - valid and invalid - works properly
 bool TrieTest::test2() {
-    // Implement a test case which does the above description.
-    return false;
+    Trie trie;
+    // test case where insert fails when word already in list
+    ASSERT_TRUE(trie.insert("words"));
+    ASSERT_FALSE(trie.insert("words"));
+
+    // check that insert of words on len != 5 fail
+    cout << "Inserting Invalid Words" << endl;
+    ASSERT_FALSE(trie.insert("book"));
+    ASSERT_FALSE(trie.insert("children"));
+
+    cout << "Current size is: " << trie.size() << " Should be 1" << endl;
+    // check size updated properly
+    ASSERT_TRUE(trie.size() == 1);
+    // check that the word was inserted correctly
+    ASSERT_TRUE(trie.getFirstWord() == "words");
+
+    // delete the word
+
+    // set it = address of first TrieNode in children
+    // this TrieNode contains (w) + a pointer to another map
+    auto it = trie.root->children.begin();
+    cout << "Deleting Nodes" << endl;
+
+    // delete all nodes under w 
+    // input: the w's map (second element in map object)
+    // output: void
+    cout << "Deleting Children" << endl;
+    trie.deleteTrie(it->second);
+    // erase all elements in the root's map
+    cout << "Erasing Map Contents" << endl;
+    trie.root->children.erase(it->first);
+
+    // check that the size of the trie is 0
+    cout << "Trie Size: " << trie.size() << endl;
+    ASSERT_TRUE(trie.size() == 0);
+
+    return true;
 }
 
 // Test 3: Inserting invalid words does not add words
@@ -120,45 +162,162 @@ bool TrieTest::test3() {
     Trie trie;
 
     ASSERT_TRUE(trie.insert("ogens"));
+    cout << "Inserted 'ogens': " << trie.size() << " words in Trie." << endl;
+
     ASSERT_TRUE(trie.insert("opend"));
+    cout << "Inserted 'opend': " << trie.size() << " words in Trie." << endl;
+
     ASSERT_TRUE(trie.insert("mopoi"));
+    cout << "Inserted 'mopoi': " << trie.size() << " words in Trie." << endl;
+
     ASSERT_TRUE(trie.insert("kmire"));
+    cout << "Inserted 'kmire': " << trie.size() << " words in Trie." << endl;
+
     ASSERT_TRUE(trie.insert("bpees"));
+    cout << "Inserted 'bpees': " << trie.size() << " words in Trie." << endl;
+
     ASSERT_TRUE(trie.insert("bmicy"));
+    cout << "Inserted 'bmicy': " << trie.size() << " words in Trie." << endl;
+
     ASSERT_TRUE(trie.insert("bmice"));
+    cout << "Inserted 'bmice': " << trie.size() << " words in Trie." << endl;
 
     ASSERT_TRUE(trie.size() == 7);
+    cout << "Expected Trie size 7, got: " << trie.size() << endl;
 
     ASSERT_FALSE(trie.insert("bmicy"));
+    cout << "Attempted to insert duplicate 'bmicy': " << trie.size() << " words in Trie." << endl;
+
     ASSERT_FALSE(trie.insert("bmice"));
+    cout << "Attempted to insert duplicate 'bmice': " << trie.size() << " words in Trie." << endl;
+
     ASSERT_FALSE(trie.insert("ogens"));
+    cout << "Attempted to insert duplicate 'ogens': " << trie.size() << " words in Trie." << endl;
+
     ASSERT_FALSE(trie.insert("opend"));
+    cout << "Attempted to insert duplicate 'opend': " << trie.size() << " words in Trie." << endl;
+
     ASSERT_FALSE(trie.insert("mopoi"));
+    cout << "Attempted to insert duplicate 'mopoi': " << trie.size() << " words in Trie." << endl;
+
     ASSERT_FALSE(trie.insert("kmire"));
+    cout << "Attempted to insert duplicate 'kmire': " << trie.size() << " words in Trie." << endl;
+
     ASSERT_FALSE(trie.insert("bpees"));
+    cout << "Attempted to insert duplicate 'bpees': " << trie.size() << " words in Trie." << endl;
 
     ASSERT_TRUE(trie.size() == 7);
+    cout << "Expected Trie size 7, got: " << trie.size() << endl;
 
-    auto it = trie.root->children.begin();
+    cout << "Straring Deletion Process" << endl;
+    auto it = trie.root->children.find('b');
+    cout << "Deleting subtree rooted at key: " << it->first << endl;
     trie.deleteTrie(it->second);
     trie.root->children.erase(it->first);
+    cout << "Done deletion" << endl;
 
     ASSERT_TRUE(trie.size() == 4);
+    cout << "Expected Trie size 4 after deletion, got: " << trie.size() << endl;
 
     return true;
 }
 
+
 // Test 4: Filtering updates a trie to a correct filtered trie
 bool TrieTest::test4() {
-    // Implement a test case which does the above description.
-    return false;
+    cout << "****************************** Starting Test 4 *******************" << endl;
+    
+    Trie trie;
+
+    cout << "Inserting words into the trie..." << endl;
+    ASSERT_TRUE(trie.insert("amicy"));
+    ASSERT_TRUE(trie.insert("amice"));
+    ASSERT_TRUE(trie.insert("opens"));
+    ASSERT_TRUE(trie.insert("opend"));
+    ASSERT_TRUE(trie.insert("moooi"));
+    ASSERT_TRUE(trie.insert("kmice"));
+    ASSERT_TRUE(trie.insert("bpens"));
+    ASSERT_TRUE(trie.insert("fpend"));
+    ASSERT_TRUE(trie.insert("toooi"));
+
+    cout << "Checking trie size after insertions..." << endl;
+    ASSERT_TRUE(trie.size() == 9);
+
+    std::string guess = "baaaa";
+    std::string colors = "byyyy"; //a letter b is not in the word, and a letter a occurs in the word but not in positions 2,3,4, and 5.
+
+    cout << "Applying first filter to the trie with guess: " << guess << " and colors: " << colors << endl;
+    ASSERT_TRUE(trie.filter(guess, colors));
+
+    cout << "Words in Trie after filtering" << endl;
+    trie.print();
+    cout << "End of words after filtering" << endl;
+    
+    cout << "Checking trie size after first filtering..." << endl;
+    ASSERT_TRUE(trie.size() == 2);
+
+    guess = "amiec";
+    colors = "gggyy";
+
+    cout << "Applying second filter to the trie with guess: " << guess << " and colors: " << colors << endl;
+    ASSERT_TRUE(trie.filter(guess, colors));
+    cout << "Checking trie size after second filtering..." << endl;
+    ASSERT_TRUE(trie.size() == 1);
+
+    std::list<std::string> words = trie.getAllWords();
+    cout << "Retrieving words from the trie..." << endl;
+    
+    ASSERT_TRUE(std::find(words.begin(), words.end(), "amice") != words.end());
+
+    cout << "Test completed successfully." << endl;
+
+    cout << "************************** END Test 4 ***********************************" << endl;
+    return true;
 }
 
 // Test 5: Filtering returns false if inputs are incorrect and does not update a trie
 bool TrieTest::test5() {
-    // Implement a test case which does the above description.
-    return false;
+    cout << "************************** Starting Test 5 ***************************" << endl;
+    Trie trie;
+
+    // Add to the tree
+    cout << "Inserting words into the trie..." << endl;
+    ASSERT_TRUE(trie.insert("apple"));
+    ASSERT_TRUE(trie.insert("lives"));
+    ASSERT_TRUE(trie.insert("hopes"));
+    ASSERT_TRUE(trie.insert("steam"));
+    ASSERT_TRUE(trie.insert("table"));
+    ASSERT_TRUE(trie.insert("holay"));
+    ASSERT_TRUE(trie.insert("wheat"));
+
+    // Check the size
+    cout << "Checking trie size after insertions..." << endl;
+    ASSERT_TRUE(trie.size() == 7);
+
+    // Filter the list with the correct answer
+    cout << "Applying filter to the trie..." << endl;
+    ASSERT_FALSE(trie.filter("knivee", "bbbbg"));
+
+    // Get the words from the trie
+    cout << "Retrieving words from the trie..." << endl;
+    auto words = trie.getAllWords();
+
+    // Check that there is only one word left
+    cout << "Checking trie size after filtering..." << endl;
+    ASSERT_TRUE(trie.size() == 7);
+    ASSERT_TRUE(std::find(words.begin(), words.end(), "apple") != words.end());
+    ASSERT_TRUE(std::find(words.begin(), words.end(), "lives") != words.end());
+    ASSERT_TRUE(std::find(words.begin(), words.end(), "hopes") != words.end());
+    ASSERT_TRUE(std::find(words.begin(), words.end(), "steam") != words.end());
+    ASSERT_TRUE(std::find(words.begin(), words.end(), "table") != words.end());
+    ASSERT_TRUE(std::find(words.begin(), words.end(), "holay") != words.end());
+    ASSERT_TRUE(std::find(words.begin(), words.end(), "wheat") != words.end());
+
+    cout << "Test completed successfully." << endl;
+    return true;
 }
+
+
 
 /*
 Similar to the ‘ListGamePlay’ function, the ‘TrieGamePlay’ function simulates the Wordle 
