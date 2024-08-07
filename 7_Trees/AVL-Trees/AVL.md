@@ -22,12 +22,12 @@ An AVL tree node consists of:
 
 #### Rotations
 
-Rotations are fundamental operations in AVL trees that help maintain balance. There are four types of rotations:
+Rotations are fundamental operations in AVL trees that help maintain balance. There are four types of rotations, which address different kinds of imbalances that may occur during insertions or deletions.
 
-1. **Left Rotation**
-2. **Right Rotation**
-3. **Left-Right Rotation**
-4. **Right-Left Rotation**
+1. **Left Rotation**: Applied when a node becomes unbalanced due to an insertion in the right subtree of the right child.
+2. **Right Rotation**: Applied when a node becomes unbalanced due to an insertion in the left subtree of the left child.
+3. **Left-Right Rotation**: Applied when a node becomes unbalanced due to an insertion in the right subtree of the left child.
+4. **Right-Left Rotation**: Applied when a node becomes unbalanced due to an insertion in the left subtree of the right child.
 
 **Left Rotation**
 ![Left Rotation](https://media.geeksforgeeks.org/wp-content/uploads/20221229131815/avl11-(1)-768.png)
@@ -165,7 +165,7 @@ Node* insert(Node* node, int key) {
 }
 ```
 
-#### Pre-order Traversal
+### Pre-order Traversal
 
 Pre-order traversal is used to print the tree nodes in a depth-first manner.
 
@@ -270,6 +270,8 @@ Node* deleteNode(Node* root, int key) {
         return rightRotate(root);
 
     if (balance > 1 && getBalance(root->left) < 0) {
+
+
         root->left = leftRotate(root->left);
         return rightRotate(root);
     }
@@ -286,19 +288,28 @@ Node* deleteNode(Node* root, int key) {
 }
 ```
 
+### Time Complexity
+
+| Operation | Best Case | Average Case | Worst Case |
+|-----------|------------|--------------|------------|
+| Insert    | \(O(\log N)\) | \(O(\log N)\) | \(O(\log N)\) |
+| Delete    | \(O(\log N)\) | \(O(\log N)\) | \(O(\log N)\) |
+| Search    | \(O(\log N)\) | \(O(\log N)\) | \(O(\log N)\) |
+
+### Recurrence Relation
+
+For insertions and deletions, the height of the tree is maintained in \(O(\log N)\). This ensures that each insertion and deletion operation, along with necessary rotations, also happens in \(O(\log N)\).
+
 ### Summary of AVL Trees
 
-- **Self-Balancing**
-
-: AVL trees maintain their height balance automatically.
-
+- **Self-Balancing**: AVL trees maintain their height balance automatically.
 - **Balancing Factor**: Ranges between -1, 0, and +1.
 - **Rotations**: Four types of rotations ensure the tree remains balanced.
-- **Operations**: Insert, delete, and search operations have a time complexity of O(log N).
+- **Operations**: Insert, delete, and search operations have a time complexity of \(O(\log N)\).
 
 ### Advantages of AVL Trees
 
-1. **Height Balanced**: Always maintains a balanced height, ensuring O(log N) height.
+1. **Height Balanced**: Always maintains a balanced height, ensuring \(O(\log N)\) height.
 2. **Efficient Search**: Provides better search performance compared to unbalanced binary search trees.
 3. **Self-Balancing**: Automatically balances after insertions and deletions.
 
